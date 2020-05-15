@@ -34,7 +34,7 @@ const CardSearchBook = (props) => {
                     </div>
                 </div>
 
-                <a className="btn  btn-light" href={props.link}>
+                <a className="btn  btn-light" href={props.link} target="_blank">
                     view
                  </a>
                 <button onClick={handleSave}>
