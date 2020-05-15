@@ -37,3 +37,5 @@ const CardSearchBook = (props) => {
 
 
 }
+
+export default CardSearchBook;
