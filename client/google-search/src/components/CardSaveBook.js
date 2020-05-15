@@ -2,34 +2,36 @@ import React from "react"
 
 const CardSaveBook = (props) => {
 
+    const [book, setBook] = useState({});
+
+
     return (
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">{props.title}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">{props.author}</h6>
+        <div className="card" style="width: 18rem;">
+        <div className="card-body">
+            <h5 className="card-title">{props.title}</h5>
+            <h6 className="card-subtitle mb-2 text-muted">{props.author}</h6>
 
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <img src="..." class="card-img" alt="..."/>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <p class="card-text">{props.body}</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                         </div>
+            <div className="card mb-3" style="max-width: 540px;">
+                <div className="row no-gutters">
+                    <div className="col-md-4">
+                        <img src={props.image} class="card-img" alt="..."/>
                     </div>
-                 </div>
+                    <div className="col-md-8">
+                        <div className="card-body">
+                            <p className="card-text">{props.body}</p>
+                        </div>
+                     </div>
+                </div>
+             </div>
 
-                 <button>
-                     view
-                 </button>
-                 <button>
-                     delete
-                 </button>
-            </div>
+             <a className="btn  btn-light" href={props.link}>
+                 view
+             </a>
+             <button>
+                 delete
+             </button>
         </div>
+    </div>
     )
 
 
