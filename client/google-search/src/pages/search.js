@@ -45,28 +45,27 @@ class SearchPage extends Component() {
     render() {
         return (
             <div>
-                <Navbar></Navbar>
+                <Navbar/>
                 <SearchForm change={this.handleInputChange}
                     clicked={this.handleSearchClick}
                     searchValue={this.state.search}
                 > </SearchForm>
                 {this.state.books.length ? (
-                <h1 className="text-center"> See Results of your Book Search </h1>}
+                <h1 className="text-center"> See Results of your Book Search </h1>
+                ):(
+                    <h1> Please Enter a Book to Search </h1>
+                )}
                  {this.state.books.map(book =>{
-                <CardSearchBook key={book.id}
+                <CardSearchBook key={this.book.id}
                 title = {this.book.volumeInfo.title}
                 author = {this.book.volumeInfo.authors}
                 body = {this.book.volumeInfo.description}
-                href = {this.book.volumeInfo.infoLink}
+                link = {this.book.volumeInfo.infoLink}
                 image = {this.book.volumeInfo.imageLinks.smallThumbnail}
                 >
                 </CardSearchBook>
                 })
-                ):(
-                    <h1> Please Enter a Book to Search </h1>
-                )}
-
-
+            }
             </div>
 
 
