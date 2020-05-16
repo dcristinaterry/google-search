@@ -33,11 +33,10 @@ const CardSearchBook = (props) => {
                         </div>
                     </div>
                 </div>
-
                 <a className="btn  btn-light" href={props.link} target="_blank">
                     view
                  </a>
-                <button onClick={handleSave}>
+                <button onClick={props.save}>
                     save
                  </button>
             </div>
