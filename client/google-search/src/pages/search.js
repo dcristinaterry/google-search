@@ -36,14 +36,12 @@ class SearchPage extends Component() {
     }
 
     handleInputChange = event => {
-        const name = event.target.name,
-        const value = event.target.value
+       
+        const {name, value} = event.target.value
         this.setState({
             [name]: value
         })
     }
-
-   
 
     handleSaveBtn = (bookIndex) => {
         const books = [...this.state.books]
@@ -85,9 +83,6 @@ class SearchPage extends Component() {
                 })
                 }
             </div>
-
-
-
         );
     }
 
