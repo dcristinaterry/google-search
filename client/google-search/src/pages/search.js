@@ -51,11 +51,11 @@ class SearchPage extends Component() {
         this.setState({book: book})
         // books.map(book => {
             APIsave.saveBook({
-                title:book.volumeInfo.title,
-                authors:book.volumeInfo.authors,
-                description:book.volumeInfo.description,
-                image:book.volumeInfo.imageLinks.smallThumbnail,
-                link:book.volumeInfo.infoLink 
+                title:this.state.book.volumeInfo.title,
+                authors:this.state.book.volumeInfo.authors,
+                description:this.state.book.volumeInfo.description,
+                image:this.state.book.volumeInfo.imageLinks.smallThumbnail,
+                link:this.state.book.volumeInfo.infoLink 
             })
         // })
     }
