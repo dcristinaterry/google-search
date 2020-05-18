@@ -8,6 +8,11 @@ class SavePage extends Component() {
 
     state = {
         books: []
+        // title: "",
+        // authors: "",
+        // description: "",
+        // image: "",
+        // link: ""
     }
 
     componentDidMount() {
@@ -17,7 +22,9 @@ class SavePage extends Component() {
     loadBooks = () => {
         API.getBooks()
             .then(res =>
-                this.setState({ books: res.data })
+                this.setState({ 
+                    books: res.data
+                 })
             )
             .catch(err => console.log(err));
     };
@@ -41,7 +48,15 @@ class SavePage extends Component() {
             <div>
                 <Navbar>
                     <Jumbotron>
-                        <CardSaveBook />
+                        {this.state.books.map(book => 
+                        <CardSaveBook
+                            title = {book.title}
+                            author = {book.author}
+                            body = {book.description}
+                            image = {book.image}
+                            link = {book.link}
+                            deleteBtn = {() => this.deleteBook(book.id)}
+                        />)}
                     </Jumbotron>
                 </Navbar>
 
