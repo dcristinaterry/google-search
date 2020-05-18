@@ -3,10 +3,12 @@ import PropType from 'prop-types'
 
 
 function SearchForm (props){
-<div>
+
+    return(
+<div className="container">
 <form>
 <div className="form-group">
-<label htmlFor="search">Search:</label>
+<label htmlFor="search">Search For Books To Read</label>
     <input
     type="text"
     onChange={props.change}
@@ -17,14 +19,14 @@ function SearchForm (props){
     placeholder="Search for Books"
     >
     </input>
-    <button onClick={props.clicked}>
+    <button className="btn-primary" onClick={props.clicked}>
         Search
     </button>
     </div>
 </form>
 
 </div>
-
+    )
 
 }
 
