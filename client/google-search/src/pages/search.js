@@ -1,17 +1,16 @@
 import React, { Component } from "react"
-import Navbar from "../components/NavBar"
 import SearchForm from "../components/SearchForm"
 import API from "../utils/API_google"
 import CardSearchBook from "../components/CardSearchBook"
 import APIsave from "../utils/API_server"
 
 
-class SearchPage extends Component() {
+class SearchPage extends Component{
 
     state = {
         search: "",
         books: [],
-        book: "",
+        book: {},
         title:"",
         author:"",
         description:"",
@@ -37,30 +36,33 @@ class SearchPage extends Component() {
 
     handleInputChange = event => {
        
-        const {name, value} = event.target.value
+        const value = event.target.value
+        
         this.setState({
-            [name]: value
+            search: value
         })
     }
 
     handleSaveBtn = (bookIndex) => {
         const books = [...this.state.books]
         const book = books.splice(bookIndex,1)
+       // const book1 = book.toString()
+        console.log(book[0].volumeInfo.title)
         this.setState({book: book})
         // books.map(book => {
             APIsave.saveBook({
-                title:book.volumeInfo.title,
-                authors:book.volumeInfo.authors,
-                description:book.volumeInfo.description,
-                image:book.volumeInfo.imageLinks.smallThumbnail,
-                link:book.volumeInfo.infoLink 
+                title:book[0].volumeInfo.title,
+                authors:book[0].volumeInfo.authors,
+                description:book[0].volumeInfo.description,
+                image:book[0].volumeInfo.imageLinks.smallThumbnail,
+                link:book[0].volumeInfo.infoLink 
             })
         // })
     }
     render() {
         return (
             <div>
-                <Navbar />
+                {/* <Navbar /> */}
                 <SearchForm change={this.handleInputChange}
                     clicked={this.handleSearchClick}
                     searchValue={this.state.search}
@@ -71,6 +73,7 @@ class SearchPage extends Component() {
                         <h1> Please Enter a Book to Search </h1>
                     )}
                 {this.state.books.map((book, id) => {
+                    return (
                     <CardSearchBook key={book.id}
                         title={book.volumeInfo.title}
                         author={book.volumeInfo.authors}
@@ -80,6 +83,7 @@ class SearchPage extends Component() {
                         save={()=> this.handleSaveBtn(id)}
                     >
                     </CardSearchBook>
+                    )
                 })
                 }
             </div>
