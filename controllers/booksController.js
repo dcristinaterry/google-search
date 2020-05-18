@@ -1,6 +1,6 @@
 const db = require("../models")
 
-module.exports ={
+module.exports = {
 
     findAll: function(req, res) {
         db.Book.find(req.query)
@@ -14,7 +14,8 @@ module.exports ={
           .catch(err => res.status(422).json(err));
       },
       create: function(req, res) {
-        console.log(req.body) //console.log
+        // console.log(db) //console.log
+        // db.Book.insert({title:req.body.title, authors:req.body.authors, description:req.body.description, image:req.body.image, link:req.body.link})
         db.Book.create(req.body)
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
@@ -30,5 +31,6 @@ module.exports ={
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
       }
+ 
 
 }

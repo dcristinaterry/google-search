@@ -35,7 +35,7 @@ const CardSearchBook = (props) => {
                             </div>
                         </div>
                     </div>
-                    <a className="btn  btn-light" href={props.link} target="_blank" rel='noreferrer noopener'>
+                <a className="btn  btn-light" href={props.link} target="_blank" rel='noreferrer noopener'>
                         view
                  </a>
                     <button onClick={props.save}>
