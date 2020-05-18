@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import Jumbotron from "../components/Jumbotron/Jumbotron";
-import Navbar from "../components/NavBar/NavBar";
-import API from "../utils/API";
-import { Link } from "react-router-dom";
+import API from "../utils/API_server";
+import CardSaveBook from "../components/CardSaveBook"
 
-class SavePage extends Component() {
+class SavePage extends Component {
 
     state = {
         books: []
@@ -22,9 +20,9 @@ class SavePage extends Component() {
     loadBooks = () => {
         API.getBooks()
             .then(res =>
-                this.setState({ 
+                this.setState({
                     books: res.data
-                 })
+                })
             )
             .catch(err => console.log(err));
     };
@@ -35,39 +33,22 @@ class SavePage extends Component() {
             .catch(err => console.log(err));
     };
 
-    handleInputChange = event => {
-        const name = event.target.name,
-        const value = event.target.value
-        this.setState({
-            [name]: value
-        })
-    }
-
     render() {
         return (
             <div>
-                <Navbar>
-                    <Jumbotron>
-                        {this.state.books.map(book => 
-                        <CardSaveBook
-                            title = {book.title}
-                            author = {book.author}
-                            body = {book.description}
-                            image = {book.image}
-                            link = {book.link}
-                            deleteBtn = {() => this.deleteBook(book.id)}
-                        />)}
-                    </Jumbotron>
-                </Navbar>
-
+                {this.state.books.map(book =>
+                    <CardSaveBook
+                        title = {book.title}
+                        author = {book.author}
+                        body = {book.description}
+                        image = {book.image}
+                        link = {book.link}
+                        deleteBtn = {() => this.deleteBook(book.id)}>
+                    </CardSaveBook>
+                )}
             </div>
-
-
-
         );
     }
-
-
 }
 
 export default SavePage;
