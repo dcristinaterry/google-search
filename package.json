@@ -1,5 +1,5 @@
 {
-  "name": "googlebooks",
+  "name": "google-search",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -24,6 +24,8 @@
     "express": "^4.17.1",
     "if-env": "^1.0.4",
     "mongoose": "^5.9.14",
+    "prop-type": "0.0.1",
+    "prop-types": "^15.7.2",
     "react-router-dom": "^5.2.0"
   }
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import PropType from 'prop-types'
 
 
 function SearchForm (props){
@@ -25,6 +26,12 @@ function SearchForm (props){
 </div>
 
 
+}
+
+SearchForm.PropType = {
+clicked: PropType.func,
+change: PropType.func,
+searchValue: PropType.string,
 }
 
 export default SearchForm;
