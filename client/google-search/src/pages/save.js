@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API_server";
-import CardSaveBook from "../components/CardSaveBook"
+import CardSaveBook from "../components/CardSaveBook";
 
 class SavePage extends Component {
 
@@ -14,6 +14,7 @@ class SavePage extends Component {
     }
 
     componentDidMount() {
+        
         this.loadBooks();
     }
 
@@ -25,6 +26,7 @@ class SavePage extends Component {
                 })
             )
             .catch(err => console.log(err));
+            console.log(this.state.books)
     };
 
     deleteBook = id => {
@@ -33,20 +35,26 @@ class SavePage extends Component {
             .catch(err => console.log(err));
     };
 
+
     render() {
         return (
             <div>
+                <h1 className="text-center"> Saved Books </h1>
                 {this.state.books.map(book =>
-                    <CardSaveBook
-                        title = {book.title}
-                        author = {book.author}
-                        body = {book.description}
-                        image = {book.image}
-                        link = {book.link}
-                        deleteBtn = {() => this.deleteBook(book.id)}>
+                    <CardSaveBook key={book.id}
+                        title={book.title}
+                        author={book.authors}
+                        body={book.description}
+                        image={book.image}
+                        link={book.link}
+                        deleteBtn={() => this.deleteBook(book.id)}
+                        >
                     </CardSaveBook>
-                )}
+                 )} 
+
             </div>
+
+
         );
     }
 }
