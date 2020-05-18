@@ -13,7 +13,7 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path="/" component={Search} />
-          <Route exact path="/save" component={Save} />
+          <Route exact path="/saved" component={Save} />
           <Route exact path="/books/:id" component={Save} />
           <Route component={NoMatch} />
         </Switch>

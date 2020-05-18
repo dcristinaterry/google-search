@@ -2,7 +2,7 @@ import React from "react"
 
 const CardSaveBook = (props) => {
 
-    const [book, setBook] = useState({});
+  
 
 
     return (
