@@ -2,8 +2,6 @@ import React from "react"
 
 const CardSaveBook = (props) => {
 
-  
-
 
     return (
         <div className="card" style={{width: "18rem"}}>

@@ -4,10 +4,9 @@ const Schema = mongoose.Schema
 const BookSchema = new Schema({
     title : {
         type: String
-        
     },
     authors: {
-        type: String
+        type: [String]
     },
     description: {
         type: String
@@ -18,7 +17,6 @@ const BookSchema = new Schema({
     link: {
         type: String
     },
-
 })
 
 const Book = mongoose.model("Book", BookSchema)
