@@ -24,7 +24,6 @@ class SavePage extends Component {
                 this.setState({
                     books: res.data
                 })
-
             )
             .catch(err => console.log(err));
             console.log(this.state.books)
@@ -58,8 +57,6 @@ class SavePage extends Component {
 
         );
     }
-
-
 }
 
 export default SavePage;
