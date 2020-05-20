@@ -61,7 +61,7 @@ class SearchPage extends Component{
     }
     render() {
         return (
-            <div className="container">
+            <div className="container pt-5 mt-5">
                 {/* <Navbar /> */}
                 <SearchForm change={this.handleInputChange}
                     clicked={this.handleSearchClick}
