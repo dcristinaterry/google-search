@@ -13,7 +13,7 @@ function SearchForm (props){
     type="text"
     onChange={props.change}
     value={props.searchValue}
-    className="form-control"
+    className="form-control mb-2 border-dark"
     id="search"
     name="search"
     placeholder="Search for Books"

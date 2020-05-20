@@ -9,7 +9,7 @@ import NoMatch from "./pages/NoMatch.js"
 function App() {
   return (
     <Router>
-    <div>
+    <div className="bg-light">
         <NavBar />
         <Switch>
           <Route exact path="/" component={Search} />
