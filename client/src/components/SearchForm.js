@@ -5,7 +5,7 @@ import PropType from 'prop-types'
 function SearchForm (props){
 
     return(
-<div className="container pt-5 mt-5">
+<div className="container">
 <form>
 <div className="form-group">
 <label htmlFor="search">Search For Books To Read</label>

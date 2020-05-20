@@ -38,7 +38,7 @@ class SavePage extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="container pt-5 mt-5">
                 <h1 className="text-center"> Saved Books </h1>
                 {this.state.books.map(book =>
                     <CardSaveBook key={book._id}
