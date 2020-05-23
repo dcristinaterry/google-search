@@ -19,7 +19,7 @@ class SearchPage extends Component {
     }
 
     componentDidMount() {
-        this.searchBooks("twilight");
+        this.searchBooks();
     }
 
     searchBooks = query => {
