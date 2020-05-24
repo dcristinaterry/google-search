@@ -9,7 +9,6 @@ class SavePage extends Component {
     }
 
     componentDidMount() {
-        
         this.loadBooks();
     }
 

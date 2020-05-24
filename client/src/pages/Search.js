@@ -19,7 +19,7 @@ class SearchPage extends Component {
     }
 
     componentDidMount() {
-        this.searchBooks();
+        this.searchBooks("");
     }
 
     searchBooks = query => {
@@ -61,10 +61,10 @@ class SearchPage extends Component {
                 <SearchForm change={this.handleInputChange}
                     clicked={this.handleSearchClick}
                     searchValue={this.state.search}
-                > </SearchForm>
+                />
                 {this.state.books.length ?
                     (<h1 className="text-center"> See Results of your Book Search </h1>)
-                    : (<h1> Please Enter a Book to Search </h1>)}
+                    : (<h1 className="text-center"> Please Enter a Book to Search </h1>)}
                 {this.state.books.map((book, id) => {
                     return (
                         <CardSearchBook key={book.id}
@@ -73,8 +73,7 @@ class SearchPage extends Component {
                             body={book.volumeInfo.description}
                             link={book.volumeInfo.infoLink}
                             image={book.volumeInfo.imageLinks.smallThumbnail}
-                            save={() => this.handleSaveBtn(id)} >
-                        </CardSearchBook>
+                            save={() => this.handleSaveBtn(id)} />
                     )
                 })}
             </div>
