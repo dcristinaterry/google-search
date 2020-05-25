@@ -8,7 +8,7 @@ router
   .post(booksController.create);
 
 router
-  .route("/save/")
+  .route("/save/")  /// "createstudent"
   .get(booksController.findAll)
   .post(booksController.create);
 
