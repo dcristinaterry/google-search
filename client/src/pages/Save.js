@@ -6,15 +6,9 @@ class SavePage extends Component {
 
     state = {
         books: []
-        // title: "",
-        // authors: "",
-        // description: "",
-        // image: "",
-        // link: ""
     }
 
     componentDidMount() {
-        
         this.loadBooks();
     }
 
@@ -35,7 +29,6 @@ class SavePage extends Component {
             .catch(err => console.log(err));
     };
 
-
     render() {
         return (
             <div className="container pt-5 mt-5">
@@ -51,10 +44,7 @@ class SavePage extends Component {
                         >
                     </CardSaveBook>
                  )} 
-
             </div>
-
-
         );
     }
 }
